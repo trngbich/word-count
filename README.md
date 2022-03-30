@@ -1,4 +1,5 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/coderefinery/word-count/HEAD)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/coderefinery/word-count/HEAD) 
+[![Doc](https://img.shields.io/badge/read-documentation-orange.svg)](https://trngbich.github.io/word-count/)
 
 # Word count example
 
