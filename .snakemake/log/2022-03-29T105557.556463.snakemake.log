@@ -1,0 +1,31 @@
+Building DAG of jobs...
+Archiving snakefiles, scripts and files under version control...
+archived environment.yml
+archived doc\index.rst
+archived data\abyss.txt
+archived .readthedocs.yml
+archived doc\dependencies.rst
+archived doc\exercises.rst
+archived binder\environment.yml
+archived results\.gitkeep
+archived doc\credit.rst
+archived processed_data\.gitkeep
+archived source\zipf_test.py
+archived doc\purpose.rst
+archived doc\conf.py
+archived .gitignore
+archived source\wordcount.py
+archived LICENSE
+archived README.md
+archived data\isles.txt
+archived matplotlibrc
+archived manuscript\.gitkeep
+archived Makefile
+archived data\LICENSE_TEXTS.md
+archived Snakefile
+archived doc\usage.rst
+archived source\plotcount.py
+archived data\last.txt
+archived data\sierra.txt
+Archiving external input files...
+Archiving conda environments...

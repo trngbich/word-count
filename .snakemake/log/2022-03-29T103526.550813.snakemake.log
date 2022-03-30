@@ -1,0 +1,157 @@
+Building DAG of jobs...
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count    min threads    max threads
+------------  -------  -------------  -------------
+all                 1              1              1
+count_words         4              1              1
+make_archive        1              1              1
+make_plot           4              1              1
+zipf_test           1              1              1
+total              11              1              1
+
+Select jobs to execute...
+
+[Tue Mar 29 10:35:26 2022]
+rule count_words:
+    input: source/wordcount.py, data/last.txt
+    output: processed_data/last.dat
+    log: processed_data/last.log
+    jobid: 7
+    wildcards: file=last
+    resources: tmpdir=C:\Users\ntr002\AppData\Local\Temp
+
+[Tue Mar 29 10:35:26 2022]
+Finished job 7.
+1 of 11 steps (9%) done
+Select jobs to execute...
+
+[Tue Mar 29 10:35:26 2022]
+rule make_plot:
+    input: source/plotcount.py, processed_data/last.dat
+    output: results/last.png
+    jobid: 6
+    wildcards: file=last
+    resources: tmpdir=C:\Users\ntr002\AppData\Local\Temp
+
+[Tue Mar 29 10:35:28 2022]
+Finished job 6.
+2 of 11 steps (18%) done
+Select jobs to execute...
+
+[Tue Mar 29 10:35:28 2022]
+rule count_words:
+    input: source/wordcount.py, data/abyss.txt
+    output: processed_data/abyss.dat
+    log: processed_data/abyss.log
+    jobid: 3
+    wildcards: file=abyss
+    resources: tmpdir=C:\Users\ntr002\AppData\Local\Temp
+
+[Tue Mar 29 10:35:28 2022]
+Finished job 3.
+3 of 11 steps (27%) done
+Select jobs to execute...
+
+[Tue Mar 29 10:35:28 2022]
+rule count_words:
+    input: source/wordcount.py, data/sierra.txt
+    output: processed_data/sierra.dat
+    log: processed_data/sierra.log
+    jobid: 9
+    wildcards: file=sierra
+    resources: tmpdir=C:\Users\ntr002\AppData\Local\Temp
+
+[Tue Mar 29 10:35:28 2022]
+Finished job 9.
+4 of 11 steps (36%) done
+Select jobs to execute...
+
+[Tue Mar 29 10:35:28 2022]
+rule count_words:
+    input: source/wordcount.py, data/isles.txt
+    output: processed_data/isles.dat
+    log: processed_data/isles.log
+    jobid: 5
+    wildcards: file=isles
+    resources: tmpdir=C:\Users\ntr002\AppData\Local\Temp
+
+[Tue Mar 29 10:35:28 2022]
+Finished job 5.
+5 of 11 steps (45%) done
+Select jobs to execute...
+
+[Tue Mar 29 10:35:28 2022]
+rule zipf_test:
+    input: source/zipf_test.py, processed_data/abyss.dat, processed_data/isles.dat, processed_data/last.dat, processed_data/sierra.dat
+    output: results/results.txt
+    jobid: 10
+    resources: tmpdir=C:\Users\ntr002\AppData\Local\Temp
+
+[Tue Mar 29 10:35:28 2022]
+Finished job 10.
+6 of 11 steps (55%) done
+Select jobs to execute...
+
+[Tue Mar 29 10:35:28 2022]
+rule make_plot:
+    input: source/plotcount.py, processed_data/abyss.dat
+    output: results/abyss.png
+    jobid: 2
+    wildcards: file=abyss
+    resources: tmpdir=C:\Users\ntr002\AppData\Local\Temp
+
+[Tue Mar 29 10:35:30 2022]
+Finished job 2.
+7 of 11 steps (64%) done
+Select jobs to execute...
+
+[Tue Mar 29 10:35:30 2022]
+rule make_plot:
+    input: source/plotcount.py, processed_data/sierra.dat
+    output: results/sierra.png
+    jobid: 8
+    wildcards: file=sierra
+    resources: tmpdir=C:\Users\ntr002\AppData\Local\Temp
+
+[Tue Mar 29 10:35:31 2022]
+Finished job 8.
+8 of 11 steps (73%) done
+Select jobs to execute...
+
+[Tue Mar 29 10:35:31 2022]
+rule make_plot:
+    input: source/plotcount.py, processed_data/isles.dat
+    output: results/isles.png
+    jobid: 4
+    wildcards: file=isles
+    resources: tmpdir=C:\Users\ntr002\AppData\Local\Temp
+
+[Tue Mar 29 10:35:32 2022]
+Finished job 4.
+9 of 11 steps (82%) done
+Select jobs to execute...
+
+[Tue Mar 29 10:35:32 2022]
+localrule make_archive:
+    input: results/abyss.png, results/isles.png, results/last.png, results/sierra.png, processed_data/abyss.dat, processed_data/isles.dat, processed_data/last.dat, processed_data/sierra.dat, results/results.txt
+    output: zipf_analysis.tar.gz
+    jobid: 1
+    resources: tmpdir=C:\Users\ntr002\AppData\Local\Temp
+
+[Tue Mar 29 10:35:33 2022]
+Finished job 1.
+10 of 11 steps (91%) done
+Select jobs to execute...
+
+[Tue Mar 29 10:35:33 2022]
+localrule all:
+    input: zipf_analysis.tar.gz
+    jobid: 0
+    resources: tmpdir=C:\Users\ntr002\AppData\Local\Temp
+
+[Tue Mar 29 10:35:33 2022]
+Finished job 0.
+11 of 11 steps (100%) done
+Complete log: D:\Doctorate\training\TUDelft\CodeRefinery\word-count\.snakemake\log\2022-03-29T103526.550813.snakemake.log

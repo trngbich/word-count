@@ -25,11 +25,12 @@ rule count_words:
 
 # create a plot for each book
 rule make_plot:
-    input:
-        plotcount='source/plotcount.py',
-	book='processed_data/{file}.dat'
-    output: 'results/{file}.png'
-    shell: 'python {input.plotcount} {input.book} {output}'
+   input:
+       plotcount='source/plotcount.py',
+       book='processed_data/{file}.dat'
+   output: 'results/{file}.png'
+   conda: "envs/plotting.yml"
+   shell: 'python {input.plotcount} {input.book} {output}'
 
 # generate summary table
 rule zipf_test:
